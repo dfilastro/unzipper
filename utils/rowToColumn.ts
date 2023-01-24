@@ -10,7 +10,8 @@ export default function RowToColumn(outputs: string[][], item: string) {
 
       const itemTimelineColumn = itemEraseUnecessaryColumns.map((i: string[], index: number) => {
         if (index === 0) counter++;
-        return i.join().toString().replace('Timeline', `Timeline summary - Scenario ${counter}`);
+        return i.join().toString();
+        // return i.join().toString().replace('Timeline', `Timeline summary - Scenario ${counter}`);
       });
 
       itemTimelineColumn[2].includes('OPEX')

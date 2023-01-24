@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "unzipv1": "ts-node-dev src/index-v1.ts",
-    "unzipv2": "ts-node-dev src/index.ts"
+    "unzipv2": "ts-node-dev src/index.ts",
+    "dev": "ts-node-dev src/index-development.ts"
   },
   "author": "Diego Filastro",
   "license": "ISC",
