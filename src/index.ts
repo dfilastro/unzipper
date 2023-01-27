@@ -10,7 +10,6 @@ import lowerToHigher from '../utils/compareNumber';
 import columnToRow from '../utils/columnToRow';
 
 const fct = async () => {
-  let dataFileArray = '' as any;
   const files = [] as string[];
   const csvFiles = [] as string[];
   let dataFile = [] as any;
@@ -163,13 +162,15 @@ const fct = async () => {
     results.shift();
   });
 
-  // fs.unlink(csvFilePath, (err) => {
-  //   if (err) {
-  //     throw err;
-  //   }
-  // });
+  csvFiles.map((i) => {
+    fs.unlink(i, (err) => {
+      if (err) {
+        throw err;
+      }
+    });
+  });
 
-  xlsx.writeFile(workbook, `Example_Output.xlsx`);
+  xlsx.writeFile(workbook, `Linked_Output.xlsx`);
 };
 
 fct();
