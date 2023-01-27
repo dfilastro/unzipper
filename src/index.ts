@@ -170,7 +170,15 @@ const fct = async () => {
     });
   });
 
-  xlsx.writeFile(workbook, `Linked_Output.xlsx`);
+  files.map((i) => {
+    fs.unlink(i, (err) => {
+      if (err) {
+        throw err;
+      }
+    });
+  });
+
+  xlsx.writeFile(workbook, `../Linked_Output.xlsx`);
 };
 
 fct();
